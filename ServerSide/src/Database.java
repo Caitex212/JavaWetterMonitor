@@ -33,11 +33,7 @@ public class Database {
             String selectquery = "SELECT * FROM Messungen";
             ResultSet rs = statement.executeQuery(selectquery);
             while (rs.next()) {
-                Timestamp ts = rs.getTimestamp(1);
-                LocalDateTime ldt = ts.toLocalDateTime();
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-                String formated = ldt.format(formatter);
-                System.out.println(formated + " " + rs.getFloat(2) + " " + rs.getFloat(3));
+                System.out.println(rs.getTimestamp(1).toString() + " " + rs.getFloat(2) + " " + rs.getFloat(3));
             }
             return rs;
         } catch (Exception e) {

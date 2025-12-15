@@ -1,10 +1,10 @@
 import javax.xml.crypto.Data;
 
-public class WetterMonitor {
-    private static final String PORT = "ttyACM1";
+public class WetterMonitor extends Thread {
+    private static final String PORT = "ttyACM0";
     private static final int BAUD_RATE = 9600;
     private Serial serial;
-    private Database db;
+    public Database db;
 
     public WetterMonitor() {
         db = new Database();
@@ -14,7 +14,8 @@ public class WetterMonitor {
         serial.open();
     }
 
-    public void readData() {
+    @Override
+    public void run() {
         while (true) {
             if (serial.dataAvailable() > 0) {
                 String data = serial.readLine();
