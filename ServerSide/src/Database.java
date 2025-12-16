@@ -32,9 +32,9 @@ public class Database {
         try {
             String selectquery = "SELECT * FROM Messungen";
             ResultSet rs = statement.executeQuery(selectquery);
-            while (rs.next()) {
-                System.out.println(rs.getTimestamp(1).toString() + " " + rs.getFloat(2) + " " + rs.getFloat(3));
-            }
+            //while (rs.next()) {
+            //    System.out.println(rs.getTimestamp(1).toString() + " " + rs.getFloat(2) + " " + rs.getFloat(3));
+            //}
             return rs;
         } catch (Exception e) {
             System.out.println("Not Read");
