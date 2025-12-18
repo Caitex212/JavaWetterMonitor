@@ -1,5 +1,3 @@
-import javax.xml.crypto.Data;
-
 public class WetterMonitor extends Thread {
     private static final int BAUD_RATE = 9600;
     private Serial serial;
