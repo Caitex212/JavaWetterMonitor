@@ -10,13 +10,13 @@ public class WetterMonitor extends Thread {
         db = new Database();
         db.DatabaseConnect();
         db.readData();
-        //serial = new Serial(PORT, BAUD_RATE, 8, 1, 0);
-        //serial.open();
+        serial = new Serial(PORT, BAUD_RATE, 8, 1, 0);
+        serial.open();
     }
 
     @Override
     public void run() {
-        while (true) {/*
+        while (true) {
             if (serial.dataAvailable() > 0) {
                 String data = serial.readLine();
 
@@ -31,7 +31,7 @@ public class WetterMonitor extends Thread {
                     System.out.println("Index: " + index);
                     db.insertData(temperature, humidity);
                 }
-            }*/
+            }
         }
     }
 }
