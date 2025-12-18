@@ -13,7 +13,7 @@ public class WetterMonitor extends Thread {
 
     @Override
     public void run() {
-        while (true) {
+        while (true) {/*
             if (serial.dataAvailable() > 0) {
                 String data = serial.readLine();
 
@@ -28,7 +28,7 @@ public class WetterMonitor extends Thread {
                     System.out.println("Index: " + index);
                     db.insertData(temperature, humidity);
                 }
-            }
+            }*/
         }
     }
 }

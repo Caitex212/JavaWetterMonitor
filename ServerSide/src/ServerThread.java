@@ -21,6 +21,7 @@ public class ServerThread extends Thread {
                         int b = clientSocket.read();
                         if(b == 0x02) {
                             data = "";
+                            continue;
                         } else if(b == 0x03) {
                             break;
                         }
@@ -42,7 +43,7 @@ public class ServerThread extends Thread {
                             clientSocket.write(response);
                             clientSocket.write(0x03);
                         }
-                    } else if (command.equals("QUT>")) {
+                    } else if (command.equals("QUT")) {
                         clientSocket.close();
                         break;
                     }

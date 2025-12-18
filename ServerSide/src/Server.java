@@ -5,9 +5,14 @@ public class Server extends Thread {
     private ServerSocket serverSocket;
     private Database db;
 
-    public Server(int port, Database db) throws IOException {
+    public Server(int port, Database db) {
         this.port = port;
-        serverSocket = new ServerSocket(port);
+        this.db = db;
+        try {
+            serverSocket = new ServerSocket(port);
+        } catch (IOException e) {
+            System.out.println(e.toString());
+        }
     }
 
     public void run() {
