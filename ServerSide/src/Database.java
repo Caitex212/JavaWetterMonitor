@@ -1,6 +1,4 @@
 import java.sql.*;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class Database {
     private static final String URL = "jdbc:mysql://localhost:3306/WetterMonitor";
