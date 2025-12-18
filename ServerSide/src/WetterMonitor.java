@@ -1,16 +1,15 @@
 import javax.xml.crypto.Data;
 
 public class WetterMonitor extends Thread {
-    private static final String PORT = "ttyACM0";
     private static final int BAUD_RATE = 9600;
     private Serial serial;
     public Database db;
 
-    public WetterMonitor() {
+    public WetterMonitor(String port) {
         db = new Database();
         db.DatabaseConnect();
         db.readData();
-        serial = new Serial(PORT, BAUD_RATE, 8, 1, 0);
+        serial = new Serial(port, BAUD_RATE, 8, 1, 0);
         serial.open();
     }
 
